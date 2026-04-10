@@ -63,7 +63,7 @@ Compatível com **Windows 10+**, **Ubuntu 24.04+** e distribuições derivadas.
 **1. Clone o repositório:**
 ```bash
 git clone https://github.com/gustav0-gg/AV1-POO.git
-cd aerocode
+cd AV1-POO
 ```
 
 **2. Instale as dependências:**
