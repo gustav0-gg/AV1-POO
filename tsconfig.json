@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "commonjs",
+        "strict": false,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "dist/",
+        "rootDir": "src/",
+        "ignoreDeprecations": "6.0",
+        "moduleResolution": "node10",
+        "noImplicitAny": false,
+        "types": ["node"]
+
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
