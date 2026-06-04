@@ -113,4 +113,15 @@ export default class Aeronave{
     static codigoExiste(codigo: string): boolean {
         return Aeronave.carregarTodosRaw().some((a: any) => a.codigo === codigo)
     }
+
+    static deletar(codigo: string): boolean {
+        const todas = Aeronave.carregarTodosRaw()
+        const novas = todas.filter((a: any) => a.codigo !== codigo)
+        if (novas.length === todas.length) return false
+        if (!fs.existsSync(path.dirname(DATA_FILE))) {
+            fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true })
+        }
+        fs.writeFileSync(DATA_FILE, JSON.stringify(novas, null, 2), "utf-8")
+        return true
+    }
 }

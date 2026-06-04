@@ -71,4 +71,15 @@ export default class Funcionario{
   static buscarPorUsuario(usuario: string): Funcionario | undefined {
     return Funcionario.carregarTodos().find((f) => f.usuario === usuario);
   }
+
+  static deletar(id: string): boolean {
+    const todos = Funcionario.carregarTodos()
+    const novos = todos.filter((f) => f.id !== id)
+    if (novos.length === todos.length) return false
+    if (!fs.existsSync(path.dirname(DATA_FILE))) {
+      fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true })
+    }
+    fs.writeFileSync(DATA_FILE, JSON.stringify(novos, null, 2), "utf-8")
+    return true
+  }
 }
